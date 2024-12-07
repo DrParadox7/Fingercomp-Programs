@@ -107,7 +107,10 @@ local function test(...)
       _G.effects[i] = g("getActiveEffects")[8]
       g("setInput", i, false)
       io.write("Effects found:\n")
-      io.write(_G.effects[i] .. "\n")
+      if _G.effects[i] == nil then
+        io.write("Value is nil\n")
+        else
+        io.write(_G.effects[i] .. "\n")
     else
       io.write("Run #" .. i .. " skipped per user's request\n")
     end
